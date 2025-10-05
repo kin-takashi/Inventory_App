@@ -2,7 +2,7 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-from database import Base  # Import your Base where models are defined
+from app.database import Base  # Import your Base where models are defined
 
 
 from alembic import context

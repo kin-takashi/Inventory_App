@@ -1,12 +1,17 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-import models, schemas, crud
-from database import SessionLocal, engine, Base
+import app.models as models, app.schemas as schemas, app.crud as crud
+from app.database import SessionLocal, engine, Base
+from app.routers import items
+from app import database, models
+
+models.Base.metadata.create_all(bind=engine)
 
 # Tạo bảng trong DB
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+app.include_router(items.router)
 
 # Dependency: tạo session DB cho mỗi request
 def get_db():
