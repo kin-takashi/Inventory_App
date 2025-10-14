@@ -7,13 +7,13 @@ from app import database, models
 
 models.Base.metadata.create_all(bind=engine)
 
-# Tạo bảng trong DB
+# crate the database tables
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 app.include_router(items.router)
 
-# Dependency: tạo session DB cho mỗi request
+# Dependency: create session db for each request
 def get_db():
     db = SessionLocal()
     try:

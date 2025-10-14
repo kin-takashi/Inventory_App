@@ -5,7 +5,9 @@ services:
     ports:
       - "8000:8000"
     environment:
+      
       - DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/inventory_db
+
     depends_on:
       - db
     volumes:
