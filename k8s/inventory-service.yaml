@@ -5,8 +5,8 @@ metadata:
 spec:
   selector:
     app: inventory-app
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: 8000
+    - port: 8000
       targetPort: 8000
-  type: LoadBalancer
+      nodePort: 30000

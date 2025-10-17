@@ -1,7 +1,6 @@
 # Buoc 1: ket noi Docker trong Minikube
-minikube -p minikube docker-env | Invoke-Expression
-
 minikube start
+minikube -p minikube docker-env | Invoke-Expression
 
 
 # buoc 2: Build image
